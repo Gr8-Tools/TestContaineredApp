@@ -1,0 +1,25 @@
+{
+  "name": "firebase_admin",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node .",
+    "build n start": "tsc && node ."
+  },
+  "dependencies": {
+    "@types/node": "^18.11.9",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "lts": "^1.2.0",
+    "multer": "^1.4.4",
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.9.0",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
