@@ -1,4 +1,3 @@
-Dockerfile
 docker*.yml
 
 .git
@@ -8,6 +7,6 @@ docker*.yml
 .vscode
 .idea
 
-lib
-node_modules
+lib/
+node_modules/
 README.md
