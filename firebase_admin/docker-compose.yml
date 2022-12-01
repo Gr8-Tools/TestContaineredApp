@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  test-ts-app-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-ts-app-cli-exec
+    # restart: unless-stopped
+    environment:
+      - PORT=3000
+    ports:
+      - "4000:3000"
+    volumes:
+      - ./:/usr/src/app
+    command: node lib/index.js
