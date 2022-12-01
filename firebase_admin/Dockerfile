@@ -18,6 +18,7 @@ EXPOSE 3000
 RUN npm run build
 
 #RUN PROJECT
+RUN echo "Docker file executed"
 CMD [ "node", "lib/index.js" ]
 
 
