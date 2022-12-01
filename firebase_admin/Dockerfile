@@ -17,14 +17,12 @@ COPY src ./src
 # check files list
 RUN ls -a
 
+#BUILD CODE
 RUN npm install
 RUN npm run build
 
 # EXPOSE PORT (WITHOUT THIS WON'T BE ACCESSABLE THROUTH 'DOCKER RUN')
 EXPOSE 3000
-
-#BUILD CODE
-RUN npm run build
 
 #RUN PROJECT
 RUN echo "Docker file executed"
