@@ -16,9 +16,6 @@
     "strictPropertyInitialization": false
   },
   "compileOnSave": true,
-//  "include": [
-//    "src",
-//    "resources",
-//    "secrets"
-//  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "lib"]
 }
