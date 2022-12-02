@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 COPY tsconfig.json ./
 
-# copy source code to /app/src folder
+# copy source code to /usr/src/app/src folder
 COPY src ./src
 
 # check files list
@@ -20,6 +20,14 @@ RUN ls -a
 #BUILD CODE
 RUN npm install
 RUN npm run build
+
+# check files list
+RUN ls -a
+RUN ls /usr/src/app -a
+
+# copy built to /usr/src/app/lib folder
+COPY lib ./lib
+RUN ls /usr/src/app -a
 
 # EXPOSE PORT (WITHOUT THIS WON'T BE ACCESSABLE THROUTH 'DOCKER RUN')
 EXPOSE 3000
