@@ -5,29 +5,21 @@ FROM node:lts-alpine
 RUN apk update
 
 #SET UP CONTAINER-PROJECT DIR
-WORKDIR /usr/src/app
+WORKDIR /server
 
 #COPY AND INSTALL DEPENDENCIES
 COPY package*.json ./
-COPY tsconfig.json ./
-
-# copy source code to /usr/src/app/src folder
-COPY src ./src
-
-# check files list
-RUN ls -a
-
 #BUILD CODE
 RUN npm install
+
+# copy code to /usr/src/app/src folder
+COPY tsconfig.json ./
+COPY . ./
+#BUILD CODE
 RUN npm run build
 
-# check files list
-RUN ls -a
-RUN ls /usr/src/app -a
-
 # copy built to /usr/src/app/lib folder
-COPY lib ./lib
-RUN ls /usr/src/app -a
+RUN ls /server/lib -a
 
 # EXPOSE PORT (WITHOUT THIS WON'T BE ACCESSABLE THROUTH 'DOCKER RUN')
 EXPOSE 3000
@@ -35,5 +27,3 @@ EXPOSE 3000
 #RUN PROJECT
 RUN echo "Docker file executed"
 CMD [ "node", "./lib/index.js" ]
-
-
