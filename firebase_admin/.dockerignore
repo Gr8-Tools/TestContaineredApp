@@ -9,4 +9,5 @@ docker*.yml
 
 lib/
 node_modules/
+**/.secrets/
 README.md
