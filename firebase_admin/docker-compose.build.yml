@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   test-ts-app-cli:
@@ -9,8 +9,16 @@ services:
     # restart: unless-stopped
     environment:
       - PORT=3000
+      - DIRECT_ENV="Direct environment variable"
+      - SECRET_ENV=/run/secrets/secret_value
+    secrets:
+      - secret_value
     ports:
       - "4000:3000"
     volumes:
       - ./:/usr/src/app
     command: node lib/index.js
+
+secrets:
+   secret_value:
+     file: ./.secrets/secret_value_file.txt

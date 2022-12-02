@@ -18,9 +18,6 @@ COPY . ./
 #BUILD CODE
 RUN npm run build
 
-# copy built to /usr/src/app/lib folder
-RUN ls /server/lib -a
-
 # EXPOSE PORT (WITHOUT THIS WON'T BE ACCESSABLE THROUTH 'DOCKER RUN')
 EXPOSE 3000
 
